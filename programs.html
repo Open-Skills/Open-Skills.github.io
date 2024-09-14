@@ -1,0 +1,160 @@
+<html><head><base href="/">
+<title>OpenSkills - Explore Vocational Programs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/programs.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <img src="images/logos/OpenSkills_Logo_text.png" alt="OpenSkills logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/programs.html"  class="active">Programs</a></li>
+          <li><a href="/internship.html">Internships</a></li>
+          <li><a href="/community.html">Community</a></li>
+          <li><a href="/profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="search-filter-section">
+        <input type="text" class="search-bar" id="programSearch" placeholder="Search for programs...">
+        <div class="filter-buttons">
+          <button class="filter-btn active" data-filter="recommended">Recommended Programs</button>
+          <button class="filter-btn" data-filter="all">All Programs</button>
+          <button class="filter-btn" data-filter="robotics">Robotics</button>
+          <button class="filter-btn" data-filter="gardening">Gardening</button>
+          <button class="filter-btn" data-filter="engineering">Engineering</button>
+          <button class="filter-btn" data-filter="agriculture">Agriculture</button>
+        </div>
+      </section>
+
+      <section class="programs-section" id="recommendedPrograms">
+        <h2>Recommended Programs</h2>
+        <div class="programs-grid" id="recommendedProgramsGrid">
+          <!-- Recommended programs will be dynamically inserted here -->
+        </div>
+      </section>
+
+      <section class="programs-section" id="allPrograms">
+        <h2>All Programs</h2>
+        <div class="programs-grid" id="allProgramsGrid">
+          <!-- All programs will be dynamically inserted here -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    // Sample program data (in a real application, this would come from a backend API)
+    const programs = [
+      { id: 1, name: "Advanced Robotics", description: "Learn to design and program advanced robotic systems.", category: "robotics" },
+      { id: 2, name: "Urban Gardening", description: "Master the art of growing plants in urban environments.", category: "gardening" },
+      { id: 3, name: "Mechanical Engineering Fundamentals", description: "Explore the core principles of mechanical engineering.", category: "engineering" },
+      { id: 4, name: "Sustainable Agriculture", description: "Learn eco-friendly farming techniques for a sustainable future.", category: "agriculture" },
+      { id: 5, name: "AI in Robotics", description: "Implement artificial intelligence in robotic systems.", category: "robotics" },
+      { id: 6, name: "Hydroponics and Aquaponics", description: "Master soilless growing techniques for efficient plant production.", category: "gardening" },
+      { id: 7, name: "Electrical Engineering Basics", description: "Understand the fundamentals of electrical systems and circuits.", category: "engineering" },
+      { id: 8, name: "Precision Agriculture", description: "Utilize technology to optimize crop yields and resource use.", category: "agriculture" },
+    ];
+
+    // Function to create a program card
+    function createProgramCard(program) {
+      return `
+        <div class="program-card" data-category="${program.category}">
+          <h3 class="program-title">${program.name}</h3>
+          <p class="program-description">${program.description}</p>
+          <a href="https://openskills.edu/programs/${program.id}" class="view-more-btn">View More</a>
+        </div>
+      `;
+    }
+
+    // Function to populate program grids
+    function populatePrograms(targetGrid, programsToShow) {
+      const grid = document.getElementById(targetGrid);
+      grid.innerHTML = programsToShow.map(createProgramCard).join('');
+    }
+
+    // Initially populate all programs
+    populatePrograms('allProgramsGrid', programs);
+
+    // Simulate recommended programs (in reality, this would be based on user data)
+    const recommendedPrograms = programs.slice(0, 4);
+    populatePrograms('recommendedProgramsGrid', recommendedPrograms);
+
+    // Filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+        const filter = button.dataset.filter;
+        
+        if (filter === 'recommended') {
+          document.getElementById('recommendedPrograms').style.display = 'block';
+          document.getElementById('allPrograms').style.display = 'none';
+        } else {
+          document.getElementById('recommendedPrograms').style.display = 'none';
+          document.getElementById('allPrograms').style.display = 'block';
+          
+          if (filter === 'all') {
+            populatePrograms('allProgramsGrid', programs);
+          } else {
+            const filteredPrograms = programs.filter(program => program.category === filter);
+            populatePrograms('allProgramsGrid', filteredPrograms);
+          }
+        }
+      });
+    });
+
+    // Search functionality
+    const searchBar = document.getElementById('programSearch');
+    searchBar.addEventListener('input', () => {
+      const searchTerm = searchBar.value.toLowerCase();
+      const filteredPrograms = programs.filter(program => 
+        program.name.toLowerCase().includes(searchTerm) || 
+        program.description.toLowerCase().includes(searchTerm)
+      );
+      populatePrograms('allProgramsGrid', filteredPrograms);
+      document.getElementById('recommendedPrograms').style.display = 'none';
+      document.getElementById('allPrograms').style.display = 'block';
+    });
+
+    // Animation for program cards
+    function animateProgramCards() {
+      const cards = document.querySelectorAll('.program-card');
+      cards.forEach((card, index) => {
+        setTimeout(() => {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0)';
+        }, index * 100);
+      });
+    }
+
+    // Call animation function after populating programs
+    animateProgramCards();
+
+    // Rerun animation when filter changes
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        setTimeout(animateProgramCards, 100);
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,190 @@
+<html>
+<head>
+<title>OpenSkills - Community</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/community.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <img src="images/logos/OpenSkills_Logo_text.png" alt="OpenSkills logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/programs.html">Programs</a></li>
+          <li><a href="/internships.html">Internships</a></li>
+          <li><a href="/community.html" class="active">Community</a></li>
+          <li><a href="/profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="conversation-channels">
+      <div class="container">
+        <h2>Conversation Channels</h2>
+        <div class="channel-tabs">
+          <button class="channel-tab active" data-channel="students">Students CC</button>
+          <button class="channel-tab" data-channel="educators">Educators CC</button>
+          <button class="channel-tab" data-channel="industrialists">Industrialists CC</button>
+          <button class="channel-tab" data-channel="all">All Users CC</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="ongoing-conversations">
+      <div class="container">
+        <h2>Ongoing Conversations</h2>
+        <div class="ongoing-cc-list">
+        </div>
+        <div class="ongoing-c-list">
+        </div>
+      </div>
+    </section>
+
+    <section class="post-conversations">
+      <div class="container">
+        <h2>Create New Conversation</h2>
+        <form id="new-conversation-form">
+          <input type="text" id="post-title" placeholder="Conversation Title" required>
+          <textarea id="post-content" placeholder="Conversation Content" required></textarea>
+          <button type="submit" class="cta-button">Post Conversation</button>
+        </form>
+
+        <h2>Recent Conversations</h2>
+        <div class="conversation-feed">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="individual-post-modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-post-title"></h2>
+      <p id="modal-post-content"></p>
+      <div id="modal-comments-section">
+      </div>
+      <form id="add-comment-form">
+        <textarea id="comment-content" placeholder="Add a comment" required></textarea>
+        <button type="submit" class="cta-button">Post Comment</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/programs">Programs</a></li>
+          <li><a href="/internships">Internships</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/profile">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://twitter.com/openskills"><i class="fab fa-twitter"></i></a>
+          <a href="https://facebook.com/openskills"><i class="fab fa-facebook"></i></a>
+          <a href="https://linkedin.com/company/openskills"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/openskills"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Stay updated with the latest community events and tech news.</p>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script>
+    const channelTabs = document.querySelectorAll('.channel-tab');
+    channelTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        channelTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        console.log(`Switched to ${tab.dataset.channel} channel`);
+      });
+    });
+
+    const mockOngoingConversations = [
+      { title: "AI in Education", author: "JohnDoe", timestamp: "2 hours ago", preview: "Discussing the impact of AI on modern education systems." },
+      { title: "Web Development Trends 2023", author: "JaneSmith", timestamp: "1 hour ago", preview: "Exploring the latest trends in web development for 2023." },
+      { title: "Cybersecurity Best Practices", author: "AliceSecure", timestamp: "30 minutes ago", preview: "Sharing essential cybersecurity practices for individuals and organizations." }
+    ];
+
+    function createConversationCard(conversation) {
+      const card = document.createElement('div');
+      card.classList.add('conversation-card');
+      card.innerHTML = `
+        <h3>${conversation.title}</h3>
+        <p>Posted by ${conversation.author} | ${conversation.timestamp}</p>
+        <p>${conversation.preview}</p>
+        <button class="cta-button join-conversation">Join</button>
+      `;
+      return card;
+    }
+
+    const ongoingCList = document.querySelector('.ongoing-c-list');
+    mockOngoingConversations.forEach(conversation => {
+      ongoingCList.appendChild(createConversationCard(conversation));
+    });
+
+    const newConversationForm = document.getElementById('new-conversation-form');
+    newConversationForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const title = document.getElementById('post-title').value;
+      const content = document.getElementById('post-content').value;
+      console.log(`New conversation posted: ${title}`);
+      newConversationForm.reset();
+    });
+
+    const modal = document.getElementById('individual-post-modal');
+    const closeModal = document.querySelector('.close');
+
+    function openModal(conversation) {
+      document.getElementById('modal-post-title').textContent = conversation.title;
+      document.getElementById('modal-post-content').textContent = conversation.preview;
+      modal.style.display = 'block';
+    }
+
+    closeModal.onclick = () => {
+      modal.style.display = 'none';
+    };
+
+    window.onclick = (event) => {
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('join-conversation')) {
+        const card = e.target.closest('.conversation-card');
+        const title = card.querySelector('h3').textContent;
+        const author = card.querySelector('p').textContent.split('|')[0].trim().replace('Posted by ', '');
+        const preview = card.querySelectorAll('p')[1].textContent;
+        openModal({ title, author, preview });
+      }
+    });
+
+    const addCommentForm = document.getElementById('add-comment-form');
+    addCommentForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const commentContent = document.getElementById('comment-content').value;
+      console.log(`New comment posted: ${commentContent}`);
+      addCommentForm.reset();
+    });
+  </script>
+</body>
+</html>

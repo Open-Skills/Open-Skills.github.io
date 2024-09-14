@@ -1,0 +1,245 @@
+<html>
+
+<head>
+  <title>OpenSkills - Discover Your Vocational Path</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+  <header>
+    <div class="container header-content">
+      <img src="images/logos/OpenSkills_Logo_text.png" alt="OpenSkills logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="/index.html" class="active">Home</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="internships.html">Internships</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="profile.html">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Discover Your Vocational Path</h1>
+        <p>Enhance your skills through FOSS tools and collaborative learning. Join OpenSkills today and shape your
+          future in the world of technology.</p>
+      </div>
+    </section>
+
+    <section class="search-section">
+      <h2>Find the Vocational program that interests you !</h2>
+      <br>
+      <div class="container">
+        <div class="search-container">
+          <input type="text" class="search-bar" placeholder="Find Your Interest or Vocational Program">
+          <div class="search-results">
+            <!-- Results will be dynamically populated here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How OpenSkills Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-icon">🔍</div>
+            <h3>Discover Programs</h3>
+            <p>Explore a wide range of vocational programs tailored to your interests.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">🎓</div>
+            <h3>Learn with FOSS</h3>
+            <p>Gain practical skills using free and open-source software tools.</p>
+          </div>
+          <div class="step">
+            <div class="step-icon">🚀</div>
+            <h3>Apply Your Skills</h3>
+            <p>Put your knowledge to work through internships and real-world projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="container">
+        <h2>Benefits for Everyone</h2>
+        <div class="benefits-grid">
+          <div class="benefit">
+            <div class="benefit-icon">👨‍🎓</div>
+            <h3>Students</h3>
+            <p>Gain real-world skills through project-based learning and mentorship.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">👩‍🏫</div>
+            <h3>Educators</h3>
+            <p>Teach with cutting-edge FOSS tools and mentor the next generation.</p>
+          </div>
+          <div class="benefit">
+            <div class="benefit-icon">🏭</div>
+            <h3>Industrialists</h3>
+            <p>Access a pool of skilled candidates and collaborate on innovative projects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-carousel">
+          <div class="testimonial-slide">
+            <p>"OpenSkills transformed my career path. The hands-on experience with FOSS tools gave me a competitive
+              edge in the job market."</p>
+            <p><strong>- Sarah J., Student</strong></p>
+          </div>
+          <!-- More testimonials can be added here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-links">
+        <ul>
+          <li><a href="/programs">Programs</a></li>
+          <li><a href="/internships">Internships</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/profile">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://twitter.com/openskills"><i class="fab fa-twitter"></i></a>
+          <a href="https://facebook.com/openskills"><i class="fab fa-facebook"></i></a>
+          <a href="https://linkedin.com/company/openskills"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <form class="contact-form">
+          <input type="email" placeholder="Your Email" required>
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <div class="ai-chat-button" id="aiChatButton">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM13 17H11V15H13V17ZM13 13H11V7H13V13Z"
+        fill="white" />
+    </svg>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Animate steps on scroll
+    const steps = document.querySelectorAll('.step');
+    const animateOnScroll = () => {
+      steps.forEach(step => {
+        const stepTop = step.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if (stepTop < windowHeight * 0.75) {
+          step.classList.add('animate');
+        }
+      });
+    };
+    window.addEventListener('scroll', animateOnScroll);
+
+    // Simple search functionality (to be expanded)
+    const searchBar = document.querySelector('.search-bar');
+    const searchResults = document.querySelector('.search-results');
+    searchBar.addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      // This is a placeholder for actual search functionality
+      if (searchTerm.length > 2) {
+        searchResults.innerHTML = `
+          <div class="result-card">
+            <h3>Web Development</h3>
+            <p>Learn modern web technologies and build responsive websites.</p>
+          </div>
+          <div class="result-card">
+            <h3>Data Science</h3>
+            <p>Analyze complex datasets and gain insights using powerful FOSS tools.</p>
+          </div>
+        `;
+      } else {
+        searchResults.innerHTML = '';
+      }
+    });
+
+    // AI Chat Button functionality (placeholder)
+    const aiChatButton = document.getElementById('aiChatButton');
+    aiChatButton.addEventListener('click', () => {
+      alert('AI Chat functionality coming soon!');
+      // Here you would typically open a chat interface
+    });
+
+    // Simple carousel for testimonials (to be expanded)
+    const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+    let currentSlide = 0;
+    const showSlide = (n) => {
+      testimonialSlides[currentSlide].style.display = 'none';
+      currentSlide = (n + testimonialSlides.length) % testimonialSlides.length;
+      testimonialSlides[currentSlide].style.display = 'block';
+    };
+    setInterval(() => showSlide(currentSlide + 1), 5000);
+
+    // Mobile menu toggle
+    const menuToggle = document.createElement('button');
+    menuToggle.innerHTML = '☰';
+    menuToggle.style.cssText = `
+      background: none;
+      border: none;
+      color: var(--text-light);
+      font-size: 1.5rem;
+      cursor: pointer;
+      display: none;
+    `;
+    const nav = document.querySelector('nav');
+    nav.parentNode.insertBefore(menuToggle, nav);
+
+    menuToggle.addEventListener('click', () => {
+      nav.querySelector('ul').classList.toggle('show');
+    });
+
+    // Responsive design adjustments
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        menuToggle.style.display = 'block';
+        nav.querySelector('ul').classList.remove('show');
+      } else {
+        menuToggle.style.display = 'none';
+        nav.querySelector('ul').classList.remove('show');
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Initial call
+  </script>
+</body>
+
+</html>

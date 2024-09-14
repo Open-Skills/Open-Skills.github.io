@@ -1,0 +1,357 @@
+
+:root {
+    --bg-dark: #121212;
+    --bg-darker: #0a0a0a;
+    --text-light: #f0f0f0;
+    --text-dim: #a0a0a0;
+    --accent-green: #00ff9d;
+    --accent-blue: #00a2ff;
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  header {
+    background-color: var(--bg-darker);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    width: auto;
+    height: 40px;
+    display: block;
+    transition: var(--transition);
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin-left: 30px;
+  }
+  
+  nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  nav ul li a:hover {
+    color: var(--accent-green);
+  }
+  
+  nav ul li a.active {
+    color: var(--accent-green);
+  }
+  
+  main {
+    padding-top: 100px;
+  }
+  
+  h1, h2, h3 {
+    margin-bottom: 20px;
+  }
+  
+  .community-hero {
+    background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .community-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .community-hero p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    background-color: var(--accent-blue);
+    color: var(--text-light);
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  
+  .cta-button:hover {
+    background-color: var(--accent-green);
+    transform: translateY(-2px);
+  }
+  
+  .conversation-channels {
+    padding: 40px 0;
+  }
+  
+  .channel-tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .channel-tab {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .channel-tab:hover,
+  .channel-tab.active {
+    background-color: var(--accent-green);
+    color: var(--bg-dark);
+  }
+  
+  .ongoing-conversations {
+    padding: 40px 0;
+    background-color: var(--bg-darker);
+  }
+  
+  .ongoing-cc-list,
+  .ongoing-c-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .conversation-card {
+    background-color: var(--bg-dark);
+    border-radius: 10px;
+    padding: 20px;
+    transition: var(--transition);
+  }
+  
+  .conversation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 157, 0.1);
+  }
+  
+  .conversation-card h3 {
+    margin-bottom: 10px;
+  }
+  
+  .conversation-card p {
+    color: var(--text-dim);
+    margin-bottom: 15px;
+  }
+  
+  .conversation-card .cta-button {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  
+  #new-conversation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  #new-conversation-form input,
+  #new-conversation-form textarea {
+    background-color: var(--bg-darker);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--text-light);
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content {
+    background-color: var(--bg-dark);
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+  }
+  
+  .close {
+    color: var(--text-dim);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: var(--accent-green);
+  }
+  
+  #add-comment-form {
+    margin-top: 20px;
+  }
+  
+  #add-comment-form textarea {
+    width: 100%;
+    background-color: var(--bg-darker);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+  }
+  
+  .footer {
+    background-color: var(--bg-darker);
+    padding: 40px 0;
+    margin-top: 80px;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin-right: 40px;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 20px;
+  }
+  
+  .footer-links {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  
+  .footer-links a:hover {
+    color: var(--accent-green);
+  }
+  
+  .social-icons a {
+    color: var(--text-dim);
+    font-size: 1.5rem;
+    margin-right: 15px;
+    transition: var(--transition);
+  }
+  
+  .social-icons a:hover {
+    color: var(--accent-blue);
+  }
+  
+  #newsletter-form {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  #newsletter-form input[type="email"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+  }
+  
+  #newsletter-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: var(--accent-blue);
+    color: var(--text-light);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  #newsletter-form button:hover {
+    background-color: var(--accent-green);
+  }
+  
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column;
+    }
+  
+    nav ul {
+      margin-top: 20px;
+    }
+  
+    nav ul li {
+      margin-left: 15px;
+      margin-right: 15px;
+    }
+  
+    .community-hero h1 {
+      font-size: 2rem;
+    }
+  
+    .community-hero p {
+      font-size: 1rem;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+    }
+  
+    .footer-section {
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }

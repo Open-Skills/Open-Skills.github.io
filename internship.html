@@ -1,0 +1,205 @@
+<html>
+<head>
+<title>OpenSkills - Internships</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/internship.css">
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <img src="images/logos/OpenSkills_Logo_text.png" alt="OpenSkills logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/programs">Programs</a></li>
+          <li><a href="/internships" class="active">Internships</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/profile">Profile</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="search-filter">
+      <div class="container">
+        <input type="text" class="search-bar" placeholder="Search for internships, apprenticeships, or job postings">
+        <div class="filters">
+          <div class="filter-group">
+            <h3>Type</h3>
+            <button class="filter-btn" data-filter="type" data-value="internship">Internship</button>
+            <button class="filter-btn" data-filter="type" data-value="apprenticeship">Apprenticeship</button>
+            <button class="filter-btn" data-filter="type" data-value="job">Job</button>
+          </div>
+          <div class="filter-group">
+            <h3>Stream</h3>
+            <button class="filter-btn" data-filter="stream" data-value="robotics">Robotics</button>
+            <button class="filter-btn" data-filter="stream" data-value="gardening">Gardening</button>
+          </div>
+          <div class="filter-group">
+            <h3>Mode</h3>
+            <button class="filter-btn" data-filter="mode" data-value="offline">Offline</button>
+            <button class="filter-btn" data-filter="mode" data-value="online">Online</button>
+          </div>
+          <div class="filter-group">
+            <h3>Duration</h3>
+            <button class="filter-btn" data-filter="duration" data-value="short-term">Short-term</button>
+            <button class="filter-btn" data-filter="duration" data-value="long-term">Long-term</button>
+          </div>
+          <div class="filter-group">
+            <h3>Payment</h3>
+            <button class="filter-btn" data-filter="payment" data-value="stipend">Stipend</button>
+            <button class="filter-btn" data-filter="payment" data-value="salary">Salary</button>
+          </div>
+          <div class="filter-group">
+            <h3>Location</h3>
+            <input type="text" class="location-filter" placeholder="Enter city or region">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recommended-postings">
+      <div class="container">
+        <h2>Recommended for You</h2>
+        <div class="posting-grid" id="recommended-grid">
+          <!-- Recommended postings will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+
+    <section class="all-postings">
+      <div class="container">
+        <h2>All Opportunities</h2>
+        <div class="posting-grid" id="all-postings-grid">
+          <!-- All postings will be dynamically inserted here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/programs">Programs</a></li>
+          <li><a href="/internships">Internships</a></li>
+          <li><a href="/community">Community</a></li>
+          <li><a href="/profile">Profile</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="https://twitter.com/openskills"><i class="fab fa-twitter"></i></a>
+          <a href="https://facebook.com/openskills"><i class="fab fa-facebook"></i></a>
+          <a href="https://linkedin.com/company/openskills"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/openskills"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Newsletter</h3>
+        <p>Stay updated with the latest internship opportunities and tech news.</p>
+        <form id="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script>
+    const internships = [
+      { title: "Frontend Developer Intern", company: "TechCorp", location: "Remote", description: "Join our team to build modern web applications using React and Vue.js.", type: "internship", stream: "software", mode: "remote", duration: "short-term", payment: "salary" },
+      { title: "Data Science Intern", company: "DataWiz", location: "New York, NY", description: "Apply machine learning algorithms to solve real-world problems in finance and healthcare.", type: "internship", stream: "data", mode: "remote", duration: "long-term", payment: "stipend" },
+      { title: "UX Design Intern", company: "DesignMasters", location: "San Francisco, CA", description: "Create intuitive and beautiful user interfaces for cutting-edge mobile applications.", type: "internship", stream: "design", mode: "offline", duration: "short-term", payment: "salary" },
+      { title: "Backend Developer Intern", company: "ServerPros", location: "Remote", description: "Develop scalable backend services using Node.js, Express, and MongoDB.", type: "internship", stream: "software", mode: "remote", duration: "long-term", payment: "stipend" },
+      { title: "DevOps Intern", company: "CloudNine", location: "Seattle, WA", description: "Learn and implement CI/CD pipelines, container orchestration, and cloud infrastructure.", type: "internship", stream: "operations", mode: "offline", duration: "long-term", payment: "salary" },
+      { title: "Mobile App Developer Intern", company: "AppGenius", location: "Remote", description: "Build cross-platform mobile apps using Flutter and React Native.", type: "internship", stream: "software", mode: "remote", duration: "short-term", payment: "stipend" }
+    ];
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const locationFilter = document.querySelector('.location-filter');
+
+    function applyFilters() {
+      const activeFilters = {};
+      filterButtons.forEach(btn => {
+        if (btn.classList.contains('active')) {
+          const filterType = btn.dataset.filter;
+          const filterValue = btn.dataset.value;
+          if (!activeFilters[filterType]) {
+            activeFilters[filterType] = [];
+          }
+          activeFilters[filterType].push(filterValue);
+        }
+      });
+
+      const locationValue = locationFilter.value.toLowerCase();
+
+      const filteredInternships = internships.filter(internship => {
+        return Object.entries(activeFilters).every(([filterType, filterValues]) => {
+          return filterValues.includes(internship[filterType]);
+        }) && (locationValue === '' || internship.location.toLowerCase().includes(locationValue));
+      });
+
+      displayInternships(filteredInternships);
+    }
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        applyFilters();
+      });
+    });
+
+    locationFilter.addEventListener('input', applyFilters);
+
+    function getRecommendedInternships() {
+      return internships.slice(0, 3);
+    }
+
+    function displayRecommendedInternships() {
+      const recommendedGrid = document.getElementById('recommended-grid');
+      const recommendedInternships = getRecommendedInternships();
+      
+      recommendedGrid.innerHTML = '';
+      recommendedInternships.forEach(internship => {
+        recommendedGrid.appendChild(createInternshipCard(internship));
+      });
+    }
+
+    function createInternshipCard(internship) {
+      const card = document.createElement('div');
+      card.classList.add('posting-card');
+      card.innerHTML = `
+        <h3>${internship.title}</h3>
+        <p><strong>${internship.company}</strong> - ${internship.location}</p>
+        <p>${internship.description}</p>
+        <p>Duration: ${internship.duration}</p>
+        <p>Payment: ${internship.payment}</p>
+        <a href="#" class="view-more-btn">View More</a>
+      `;
+      return card;
+    }
+
+    function displayInternships(internshipsToShow) {
+      const allPostingsGrid = document.getElementById('all-postings-grid');
+      allPostingsGrid.innerHTML = '';
+      internshipsToShow.forEach(internship => {
+        allPostingsGrid.appendChild(createInternshipCard(internship));
+      });
+    }
+
+    function initPage() {
+      displayRecommendedInternships();
+      displayInternships(internships);
+    }
+
+    initPage();
+  </script>
+</body>
+</html>
