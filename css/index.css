@@ -43,9 +43,16 @@
   }
 
   .logo {
-    width: 150px;
-    height: auto;
+    width: auto;
+    height: 40px;
+    display: block;
+    transition: var(--transition);
   }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
 
   nav ul {
     display: flex;
@@ -64,6 +71,10 @@
   }
 
   nav ul li a:hover {
+    color: var(--accent-green);
+  }
+
+  nav ul li a.active {
     color: var(--accent-green);
   }
 
@@ -228,7 +239,7 @@
   }
 
   footer {
-    background-color: var(--bg-darker);
+    background-color: var(--bg-dark);
     padding: 40px 0;
   }
 
@@ -282,7 +293,7 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: var(--bg-dark);
+    background-color: var(--bg-darker);
     border: none;
     border-radius: 5px;
     color: var(--text-light);
@@ -291,7 +302,7 @@
   .contact-form input:focus,
   .contact-form textarea:focus {
     outline: none;
-    box-shadow: 0 0 0 2px var(--accent-blue);
+    box-shadow: 0 0 0 2px var(--accent-green);
   }
 
   .contact-form button {
