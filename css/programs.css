@@ -43,9 +43,16 @@ header {
 }
 
 .logo {
-  width: 150px;
-  height: auto;
+  width: auto;
+  height: 40px;
+  display: block;
+  transition: var(--transition);
 }
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
 
 nav ul {
   display: flex;
@@ -66,6 +73,10 @@ nav ul li a {
 nav ul li a:hover {
   color: var(--accent-green);
   text-shadow: 0 0 10px var(--accent-green);
+}
+
+nav ul li a.active {
+  color: var(--accent-green);
 }
 
 main {
