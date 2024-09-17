@@ -22,9 +22,10 @@
     </div>
   </header>
 
-  <main>      
-    <div class="container">
+  <main>
       <section class="search-filter-section">
+        <div class="container">
+        <h1>Search through a variety of Vocational Programs at OpenSkills 🔍</h1>
         <input type="text" class="search-bar" id="programSearch" placeholder="Search for programs...">
         <div class="filter-buttons">
           <button class="filter-btn active" data-filter="recommended">Recommended Programs</button>
@@ -34,15 +35,16 @@
           <button class="filter-btn" data-filter="engineering">Engineering</button>
           <button class="filter-btn" data-filter="agriculture">Agriculture</button>
         </div>
+        </div>
       </section>
-
+      <section class="results">
+        <div class="container">
       <section class="programs-section" id="recommendedPrograms">
         <h2>Recommended Programs</h2>
         <div class="programs-grid" id="recommendedProgramsGrid">
           <!-- Recommended programs will be dynamically inserted here -->
         </div>
       </section>
-
       <section class="programs-section" id="allPrograms">
         <h2>All Programs</h2>
         <div class="programs-grid" id="allProgramsGrid">
@@ -50,6 +52,8 @@
         </div>
       </section>
     </div>
+    </section>
+    </main>
   </main>
   <footer>
     <section>
@@ -75,7 +79,7 @@
     </section>
   </footer>
 
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
   <script>
     // Sample program data (in a real application, this would come from a backend API)
     const programs = [
