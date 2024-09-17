@@ -22,7 +22,7 @@ body {
 }
 
 main {
-  padding: 100px;
+  padding-top: 100px;
 }
 
 .container {
@@ -83,20 +83,28 @@ nav ul li a.active {
 }
 
 
-h2, h3 {
-  margin-bottom: 20px;
+h2{
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+h3{
+  margin-bottom: 10px;
 }
 
 h1 {
-  font-size: 2.0rem;
+  font-size: 2.0  rem;
   margin-bottom: 20px;
-  animation: fadeInUp 1s ease-out;
+  animation: fadeInUp 1s ease-in;
   text-align: center;
   justify-content: center;
+  padding: 20px;
+
 }
 
 .search-filter-section {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  background-color: var(--bg-dark);
 }
 
 .search-bar {
@@ -113,9 +121,8 @@ h1 {
 
 .search-bar:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--accent-green), 0 0 20px var(--accent-green);
+  box-shadow: 0 0 0 2px var(--accent-green);
 }
-
 .filter-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -132,10 +139,21 @@ h1 {
   transition: var(--transition);
 }
 
-.filter-btn:hover, .filter-btn.active {
+.filter-btn:hover{
+  background-color: var(--accent-green);
+  color: var(--bg-dark);
+  box-shadow: var(--accent-green);
+}
+
+.filter-btn.active {
   background-color: var(--accent-blue);
   color: var(--bg-dark);
-  box-shadow: 0 0 10px var(--accent-blue);
+  box-shadow: var(--accent-blue);
+}
+
+.results{
+  background-color: var(--bg-darker);
+  padding: 20px;
 }
 
 .programs-section {
@@ -149,8 +167,8 @@ h1 {
 }
 
 .program-card {
-  background-color: var(--bg-darker);
-  border-radius: 10px;
+  background-color: var(--bg-dark);
+  border-radius: 20px;
   padding: 30px;
   transition: var(--transition);
   display: flex;
@@ -161,7 +179,7 @@ h1 {
 
 .program-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 255, 157, 0.2);
+  box-shadow: 5px 5px var(--accent-green);
 }
 
 .program-title {
@@ -187,7 +205,6 @@ h1 {
 
 .view-more-btn:hover {
   background-color: var(--accent-green);
-  box-shadow: 0 0 10px var(--accent-green);
 }
 
 footer {
@@ -228,18 +245,18 @@ footer {
 .social-icons {
   display: flex;
   gap: 15px;
+  padding-top: 6px;
 }
 
 .social-icons a {
   color: var(--text-dim);
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   transition: var(--transition);
 }
 
 .social-icons a:hover {
   color: var(--accent-green);
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -258,7 +275,7 @@ footer {
 }
 
 .contact-form button {
-  background-color: var(--accent-green);
+  background-color: var(--accent-blue);
   color: var(--bg-dark);
   border: none;
   padding: 10px 20px;
@@ -268,7 +285,7 @@ footer {
 }
 
 .contact-form button:hover {
-  background-color: var(--accent-blue);
+  background-color: var(--accent-green);
 }
 
 
