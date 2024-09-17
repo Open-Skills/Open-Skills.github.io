@@ -19,7 +19,10 @@ body {
   background-color: var(--bg-dark);
   color: var(--text-light);
   line-height: 1.6;
-  padding: 100px
+}
+
+main {
+  padding: 100px;
 }
 
 .container {
