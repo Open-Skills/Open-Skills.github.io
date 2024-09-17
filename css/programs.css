@@ -21,6 +21,10 @@ body {
   line-height: 1.6;
 }
 
+main {
+  padding: 100px;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -72,19 +76,23 @@ nav ul li a {
 
 nav ul li a:hover {
   color: var(--accent-green);
-  text-shadow: 0 0 10px var(--accent-green);
 }
 
 nav ul li a.active {
-  color: var(--accent-green);
+  color: var(--accent-blue);
 }
 
-main {
-  padding-top: 100px;
-}
 
-h1, h2, h3 {
+h2, h3 {
   margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.0rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out;
+  text-align: center;
+  justify-content: center;
 }
 
 .search-filter-section {
@@ -125,9 +133,9 @@ h1, h2, h3 {
 }
 
 .filter-btn:hover, .filter-btn.active {
-  background-color: var(--accent-green);
+  background-color: var(--accent-blue);
   color: var(--bg-dark);
-  box-shadow: 0 0 10px var(--accent-green);
+  box-shadow: 0 0 10px var(--accent-blue);
 }
 
 .programs-section {
@@ -181,6 +189,88 @@ h1, h2, h3 {
   background-color: var(--accent-green);
   box-shadow: 0 0 10px var(--accent-green);
 }
+
+footer {
+  background-color: var(--bg-dark);
+  padding: 40px 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links,
+.footer-social,
+.footer-contact {
+  margin-bottom: 20px;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer-links ul li a:hover {
+  color: var(--accent-green);
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: var(--text-dim);
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
+.social-icons a:hover {
+  color: var(--accent-green);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--bg-darker);
+  border: none;
+  border-radius: 5px;
+  color: var(--text-light);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-green);
+}
+
+.contact-form button {
+  background-color: var(--accent-green);
+  color: var(--bg-dark);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-blue);
+}
+
 
 @media (max-width: 768px) {
   .header-content {
