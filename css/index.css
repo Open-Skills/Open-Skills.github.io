@@ -75,7 +75,7 @@
   }
 
   nav ul li a.active {
-    color: var(--accent-green);
+    color: var(--accent-blue);
   }
 
   .hero {
@@ -155,20 +155,21 @@
     position: fixed;
     bottom: 30px;
     right: 30px;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background-color: var(--accent-blue);
+    background-color: var(--accent-green);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: var(--transition);
-    box-shadow: 0 0 10px rgba(0, 162, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 162, 255, 0.5);
   }
 
   .ai-chat-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.10);
+    background-color: var(--accent-blue);
   }
 
   .how-it-works {
@@ -285,7 +286,7 @@
   }
 
   .social-icons a:hover {
-    color: var(--accent-blue);
+    color: var(--accent-green);
   }
 
   .contact-form input,
