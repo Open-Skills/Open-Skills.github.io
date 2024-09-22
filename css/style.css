@@ -2738,13 +2738,14 @@ li {
     padding: 0 4px;
     padding-right: 8px;
 }
-.header-sticky.sticky-bar {
-    background: #c054ff;
-    background: -moz-linear-gradient(top, #c054ff 0%, #5274ff 100%);
-    background: -webkit-linear-gradient(top, #c054ff 0%, #5274ff 100%);
-    background: linear-gradient(to bottom, #c054ff 0%, #5274ff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c054ff', endColorstr='#5274ff',GradientType=0 );
+.header-sticky.sticky-bar{
+    background: #333333;
 }
+
+.header-bottom,  .header-sticky, .sticky-bar{
+    background: #333333;
+}
+
 .about-area1 .support-wrapper .left-content1 .about-icon {
     background: #eae2fe;
     background: -moz-linear-gradient(top, #eae2fe 0%, #a376ff 1%, #ea68ff 98%, #ec7dfe 99%, #f3f3fa 99%, #f4f5fa 100%);
