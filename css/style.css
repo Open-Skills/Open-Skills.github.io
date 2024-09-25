@@ -1383,6 +1383,11 @@ li {
 .about-area3 .support-wrapper .right-content3 .right-img img {
     width: 100%;
 }
+iframe {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
 .video-icon {
     position: absolute;
     right: 0;

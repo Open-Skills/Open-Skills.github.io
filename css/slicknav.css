@@ -11,14 +11,14 @@
     box-sizing: border-box;
     display: flex;
     justify-content: flex-end; /* Align items to the right */
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 5px; /* Rounded corners */
 }
 
 .slicknav_btn {
     position: relative;
     display: block;
-    padding: 10px;
-    background-color: transparent;
+    padding: 15px;
+    background-color: #333333;
     border: none;
     cursor: pointer;
     outline: none;
