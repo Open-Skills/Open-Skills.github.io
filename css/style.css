@@ -1482,6 +1482,8 @@ iframe {
 .team-area .single-cat .cat-icon img {
     margin: 0 auto;
     margin-bottom: 30px;
+    width: 100%;
+    height: auto;
 }
 .team-area .single-cat .cat-cap span {
     color: #6785ff;
