@@ -111,8 +111,58 @@
                 </div>
             </div>
         </section>
+        <br>
+        <br>
+        <!-- Chat Window Section -->
+        <section class="chat-window">
+            <div class="container">
+                <div class="chat-box">
+                    <div class="messages">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="message">
+                            <span class="timestamp">10:00 AM</span>
+                            <span class="user">Alice:</span>
+                            <span class="text">Hey everyone! How's the project going?</span>
+                        </div>
+                        <div class="message">
+                            <span class="timestamp">10:05 AM</span>
+                            <span class="user">Bob:</span>
+                            <span class="text">Hi Alice! It's going well. Just finished the initial setup.</span>
+                        </div>
+                        <div class="message">
+                            <span class="timestamp">10:10 AM</span>
+                            <span class="user">Charlie:</span>
+                            <span class="text">Good morning! I'm working on the backend APIs today.</span>
+                        </div>
+                        <div class="message">
+                            <span class="timestamp">10:15 AM</span>
+                            <span class="user">Alice:</span>
+                            <span class="text">Great! Let me know if you need any help with the frontend.</span>
+                        </div>
+                        <div class="message">
+                            <span class="timestamp">10:20 AM</span>
+                            <span class="user">Bob:</span>
+                            <span class="text">Sure, Alice. I'll ping you if I run into any issues.</span>
+                        </div>
+                    </div>
+                    <div class="message-input">
+                        <input type="text" id="message" placeholder="Type your message here...">
+                        <button id="sendBtn">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br>
+                        <br>
+    </main> 
 
-    </main>    
     <footer>
        <div class="footer-wrappper footer-bg">
         <!-- Footer Start-->
@@ -231,3 +281,35 @@
 
 <!-- Mirrored from preview.colorlib.com/theme/courses/courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Sep 2024 04:05:24 GMT -->
 </html>
+
+<script>
+    document.getElementById('sendBtn').addEventListener('click', function() {
+        var messageText = document.getElementById('message').value;
+        if (messageText.trim() !== '') {
+            var messagesDiv = document.querySelector('.messages');
+            var newMessageDiv = document.createElement('div');
+            newMessageDiv.classList.add('message');
+            
+            var timestampSpan = document.createElement('span');
+            timestampSpan.classList.add('timestamp');
+            var currentTime = new Date();
+            timestampSpan.textContent = currentTime.getHours() + ':' + (currentTime.getMinutes() < 10 ? '0' : '') + currentTime.getMinutes() + ' ' + (currentTime.getHours() >= 12 ? 'PM' : 'AM');
+            
+            var userSpan = document.createElement('span');
+            userSpan.classList.add('user');
+            userSpan.textContent = 'You:';
+            
+            var textSpan = document.createElement('span');
+            textSpan.classList.add('text');
+            textSpan.textContent = messageText;
+            
+            newMessageDiv.appendChild(timestampSpan);
+            newMessageDiv.appendChild(userSpan);
+            newMessageDiv.appendChild(textSpan);
+            
+            messagesDiv.appendChild(newMessageDiv);
+            document.getElementById('message').value = '';
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+    });
+</script>

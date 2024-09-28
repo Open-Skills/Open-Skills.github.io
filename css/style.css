@@ -3706,3 +3706,46 @@ del {
 .switch-wrap {
     margin-bottom: 10px;
 }
+
+.chat-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 100%;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.messages {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+.message {
+    margin-bottom: 10px;
+}
+.timestamp {
+    color: #888;
+    font-size: 0.8em;
+    margin-right: 5px;
+}
+.user {
+    font-weight: bold;
+    margin-right: 5px;
+}
+.message-input {
+    display: flex;
+}
+#message {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#sendBtn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
