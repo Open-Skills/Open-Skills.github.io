@@ -1,0 +1,298 @@
+:root {
+  --bg-light: #f8f9fa;
+  --bg-lighter: #e9ecef;
+  --text-dark: #343a40;
+  --text-dim: #6c757d;
+  --accent-green: #28a745;
+  --accent-blue: #007bff;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header {
+  background-color: var(--bg-lighter);
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: auto;
+  height: 40px;
+  display: block;
+  transition: var(--transition);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  font-size: 16px;
+}
+
+nav ul li a:hover {
+  color: var(--accent-green);
+}
+
+nav ul li a.active {
+  color: var(--accent-green);
+}
+
+main {
+  padding-top: 100px;
+}
+
+h1, h2, h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.profile-header {
+  background: linear-gradient(135deg, var(--bg-lighter) 0%, var(--bg-light) 100%);
+  padding: 60px 0;
+  text-align: center;
+}
+
+.profile-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-green);
+  margin-bottom: 20px;
+}
+
+.profile-stats {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-blue);
+}
+
+.stat-label {
+  font-size: 1.5rem;
+  color: var(--text-dim);
+}
+
+.profile-content {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+.profile-sidebar {
+  flex: 1;
+}
+
+.profile-main {
+  flex: 3;
+}
+
+.profile-section {
+  background-color: var(--bg-lighter);
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+
+.profile-section h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--accent-green);
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background-color: var(--bg-light);
+  color: var(--accent-blue);
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
+.course-card {
+  background-color: var(--bg-light);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: var(--transition);
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.course-card p {
+  color: var(--text-dim);
+  font-size: 1.0 rem;
+  margin-bottom: 15px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: var(--bg-lighter);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: var(--accent-green);
+  transition: width 0.5s ease;
+}
+
+.achievement-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 20px;
+}
+
+.achievement {
+  text-align: center;
+}
+
+.achievement img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.achievement p {
+  font-size: 1.2 rem;
+  color: var(--text-dim);
+}
+
+.profile-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.profile-section ul li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.profile-section ul li::before {
+  content: "•";
+  color: var(--accent-green);
+  font-size: 1.2 rem;
+  position: absolute;
+  left: 0;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--accent-blue);
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background-color: var(--accent-green);
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  nav ul {
+    margin-top: 20px;
+  }
+
+  nav ul li {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .profile-content {
+    flex-direction: column;
+  }
+
+  .profile-sidebar,
+  .profile-main {
+    flex: 1;
+  }
+
+  .achievement-list {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+}

@@ -1,164 +1,408 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<!-- Mirrored from preview.colorlib.com/theme/courses/courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Sep 2024 04:05:23 GMT -->
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard UI</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .bg-custom-purple {
-      background-color: rgba(73, 19, 82, 1);
-      border-radius: 8px; /* Add border radius for the aside */
-    }
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>OpenSkills | Programs</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.html">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 
-    .bg-gradient-purple-pink {
-      background: linear-gradient(to bottom, #a18cd1, #fbc2eb); /* Gradient from purple to pink */
-      border-radius: 0; /* No border radius for the main container */
-    }
-
-    /* 3D Card Effect */
-    .card {
-      transition: transform 0.2s;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Profile Image Style */
-    .profile-image {
-      width: 40px; /* Set desired width */
-      height: 40px; /* Set desired height */
-    }
-  </style>
+    <!-- CSS here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/slicknav.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/progressbar_barfiller.css">
+    <link rel="stylesheet" href="css/gijgo.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/animated-headline.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/profile.css">
 </head>
 
 <body>
-
-  <!-- Main Wrapper with Purple to Pink Gradient Background -->
-  <div class="container mx-auto bg-gradient-purple-pink p-8">
-    <!-- Sidebar and Main Content -->
-    <div class="flex">
-      <!-- Sidebar with Custom Purple Background -->
-      <aside class="w-64 h-screen bg-custom-purple text-white p-5 shadow-lg mr-4">
-        <div class="mb-8">
-          <!-- Replace Circle with Logo -->
-          <div class="col-xl-2 col-lg-2">
-            <div class="logo">
-              <a href="index.html"><img src="img/logo/logo.png" alt="Logo" class="w-full h-auto"></a>
+    <!-- ? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="img/logo/loader.png" alt="Please wait...">
+                </div>
             </div>
-          </div>
         </div>
-        <nav>
-          <ul>
-            <li class="mb-6">
-              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
-                <span>My profile</span>
-              </a>
-            </li>
-            <li class="mb-6">
-              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
-                <span>Cources</span>
-              </a>
-            </li>
-            <li class="mb-6">
-              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
-                <span>Projects</span>
-              </a>
-            </li>
-            <li class="mb-6">
-              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
-                <span>Assignments</span>
-              </a>
-            </li>
-            <li class="mb-6">
-              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
-                <span>Results & Documents</span>
-              </a>
-            </li>
-            <li class="mb-6">
-              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
-                <span>Community</span>
-              </a>
-            </li>
-            <li class="mb-6">
-              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
-                <span>Notes & Books</span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
-      <!-- Main Content -->
-      <div class="flex-1 p-8">
-        <header class="flex justify-between items-center mb-6">
-          <div>
-            <h2 class="text-xl font-bold">Dashboard</h2>
-          </div>
-          <div class="flex items-center space-x-4">
-            <div class="flex items-center space-x-2">
-              <span>Profile</span>
-              <img src="https://tse3.mm.bing.net/th?id=OIP.h_6BkC8gtDIwXLwW33zWTQHaHa&pid=Api&P=0&h=180" alt="Profile" class="rounded-full profile-image">
-            </div>
-          </div>
-        </header>
-
-        <!-- Stats Section -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-lg card">
-            <h3 class="text-lg font-semibold mb-4">Visits for Today</h3>
-            <p class="text-5xl font-bold text-gray-800">824</p>
-            <div class="mt-4">
-              <p class="text-gray-500">View Full Statistics</p>
-            </div>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg card">
-            <h3 class="text-lg font-semibold mb-4">Popularity Score</h3>
-            <p class="text-5xl font-bold text-gray-800">87%</p>
-            <div class="mt-4">
-              <p class="text-gray-500">Keep growing your audience!</p>
-            </div>
-          </div>
-        </section>
-
-        <!-- Additional Data Section -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-          <div class="bg-white p-6 rounded-lg shadow-lg card">
-            <h3 class="text-lg font-semibold mb-4">Finance Performance</h3>
-            <p class="text-3xl font-bold text-gray-800">12,641</p>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg card">
-            <h3 class="text-lg font-semibold mb-4">Top Partners</h3>
-            <ul>
-              <li class="flex justify-between">
-                <span>Becky Cooper</span>
-                <span>45%</span>
-              </li>
-              <li class="flex justify-between mt-2">
-                <span>Albert Flores</span>
-                <span>30%</span>
-              </li>
-              <li class="flex justify-between mt-2">
-                <span>Guy Hawkins</span>
-                <span>25%</span>
-              </li>
-            </ul>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-lg card">
-            <h3 class="text-lg font-semibold mb-4">Targeting by Region</h3>
-            <div class="text-center">
-              <p>Poland - 45%</p>
-            </div>
-          </div>
-        </section>
-      </div>
     </div>
-  </div>
+    <!-- Preloader Start -->
+    <!-- Header Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparent flex-row">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="index.html"><img src="img/logo/logo.png" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10">
+                                <div class="menu-wrapper d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="index.html">Home</a></li>
+                                                <li><a href="courses.html">Programs</a></li>
+                                                <li><a href="opportunities.html">Opportunities</a></li>
+                                                <li><a href="communities.html">Communities</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="students_community.html">Students Community</a>
+                                                        </li>
+                                                        <li><a href="educators_community.html">Educators Community</a>
+                                                        </li>
+                                                        <li><a href="industry_community.html">Industry Community</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
 
+                                                <li><a href="about.html">About Us</a></li>
+                                                <!-- Button -->
+                                                <li class="button-header margin-left padding-23px">
+                                                 <a href="profile.html">
+                                                    <div class="profile-image-container">
+                                                        <img src="img/gallery/user.png" alt="Profile Image">
+                                                    </div>
+                                                </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="col-12">
+            <div class="mobile_menu d-block d-lg-none"></div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <!-- Header End -->
+    <main>
+        <!--? slider Area Start-->
+        <section class="slider-area slider-area2">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider slider-height2">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 col-lg-11 col-md-12">
+                                <div class="hero__caption hero__caption2">
+                                    <h1 data-animation="bounceIn" data-delay="0.2s">Profile Page</h1>
+                                    <p data-animation="fadeInUp" data-delay="0.4s">We provide a comprehensive set of tools and resources designed to empower you with the skills and expertise necessary to excel in your personal and professional journey.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-header">
+            <div class="container text-center">
+                <img src="img/gallery/user.png" alt="Profile picture of a smiling young professional" class="profile-picture mx-auto d-block">
+                <h1>Sushant Kondekar</h1>
+                <p>Web Developer | AI Enthusiast | Lifelong Learner</p>
+                <div class="profile-stats">
+                    <div class="stat">
+                        <div class="stat-value">15</div>
+                        <div class="stat-label">Courses Completed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">8</div>
+                        <div class="stat-label">Certifications</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">1250</div>
+                        <div class="stat-label">XP Points</div>
+                    </div>
+                </div>
+            </div>
+      
+        <section class="profile-content container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="profile-sidebar">
+                        <div class="profile-section">
+                            <h2>Skills</h2>
+                            <div class="skill-list">
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">Data Analysis</span>
+                            </div>
+                        </div>
+                        <div class="profile-section">
+                            <h2>Achievements</h2>
+                            <div class="achievement-list">
+                                <div class="achievement">
+                                    <img src="img\badges\top-performer.png">
+                                    <p>Top Performer</p>
+                                </div>
+                                <div class="achievement">
+                                    <img src="img\badges\ai-certified.png">
+                                    <p>AI Certified</p>
+                                </div>
+                                <div class="achievement">
+                                    <img src="img\badges\fast-learner.png" alt="Rocket achievement icon">
+                                    <p>Fast Learner</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="profile-main">
+                        <div class="profile-section">
+                            <h2>Current Courses</h2>
+                            <div class="course-card">
+                                <h3>Advanced Machine Learning</h3>
+                                <p>Instructor: Dr. Jane Smith</p>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <div class="course-card">
+                                <h3>Full-Stack Web Development</h3>
+                                <p>Instructor: Prof. Mike Johnson</p>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="profile-section">
+                            <h2>Recent Activity</h2>
+                            <ul>
+                                <li>Completed "Introduction to Natural Language Processing" course</li>
+                                <li>Earned "Python for Data Science" certification</li>
+                                <li>Participated in "AI Ethics" community discussion</li>
+                            </ul>
+                        </div>
+                        <div class="profile-section">
+                            <h2>Learning Path</h2>
+                            <p>You're on track to become an AI Specialist! Keep up the great work!</p>
+                            <a href="/learning-path" class="cta-button">View Full Learning Path</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+    <footer>
+        <div class="footer-wrappper footer-bg">
+            <!-- Footer Start-->
+            <div class="footer-area footer-padding">
+                <div class="container">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-4 col-lg-5 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30">
+                                    <!-- logo -->
+                                    <div class="footer-logo mb-25">
+                                        <a href="index.html"><img src="img/logo/logo_footer.png" alt=""></a>
+                                    </div>
+                                    <div class="footer-tittle">
+                                        <div class="footer-pera">
+                                            <p>Empowering the Future with Skills that Matter. Learn, Create, and
+                                                Collaborate through Open-Source Innovation</p>
+                                        </div>
+                                    </div>
+                                    <!-- social -->
+                                    <div class="footer-social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="https://bit.ly/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-5 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30">
+                                    <!-- Contact Us Form -->
+                                    <div class="footer-tittle">
+                                        <h4>Contact Us</h4>
+                                    </div>
+                                    <div class="footer-form">
+                                        <form action="#" method="post">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" name="name"
+                                                    placeholder="Your Name" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" name="email"
+                                                    placeholder="Your Email" required>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="message" rows="4"
+                                                    placeholder="Your Message" required></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-primary">Send Message</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Scroll Up -->
+            <div id="back-top">
+                <a title="Ai Chat" href="#" onclick="showAlert()"> 
+                    <i class="fa-brands fa-rocketchat"></i>
+                </a>
+            </div>
+            
+            <script>
+                function showAlert() {
+                    alert("AI feature is coming soon");
+                }
+            </script>
+            
+            <style>
+                /* Ensure the back-to-top button stays in the bottom-right corner */
+                #back-top {
+                    position: fixed;
+                    bottom: 30px; /* Space from bottom */
+                    right: 30px;  /* Space from right */
+                    z-index: 999; /* Ensure it stays on top of other content */
+                }
+            
+                /* Styling the circular button with neon effect */
+                #back-top a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 70px;
+                    height: 70px;
+                    background-color: #0d1214; /* Black background for a neon glow */
+                    color: #fff; /* White color for the icon */
+                    border-radius: 50%;
+                    box-shadow: 0 0 20px #00e6ff, 0 0 40px #00e6ff, 0 0 60px #00e6ff; /* Neon glow */
+                    text-decoration: none;
+                    transition: transform 0.3s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+                    animation: neonPulse 2s infinite alternate; /* Pulsing neon effect */
+                }
+            
+                /* Icon inside the button */
+                #back-top a i {
+                    font-size: 24px;
+                }
+            
+                /* Hover effect to increase neon glow */
+                #back-top a:hover {
+                    background-color: #05666d; /* Darker shade of black on hover */
+                    transform: scale(1.2); /* Grows larger on hover */
+                    box-shadow: 0 0 30px #00ffea, 0 0 60px #00ffea, 0 0 90px #00ffea; /* Neon glow intensifies */
+                }
+            
+                /* Pulsing neon animation */
+                @keyframes neonPulse {
+                    0% {
+                        box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Initial pink glow */
+                    }
+                    50% {
+                        box-shadow: 0 0 20px #00e6ff, 0 0 40px #00e6ff, 0 0 60px #00e6ff; /* Switch to blue glow */
+                    }
+                    100% {
+                        box-shadow: 0 0 30px #00ffea, 0 0 60px #00ffea, 0 0 90px #00ffea; /* End with cyan glow */
+                    }
+                }
+            </style>
+
+            <!-- JS here -->
+            <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+            <!-- Jquery, Popper, Bootstrap -->
+            <script src="js/vendor/jquery-1.12.4.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <!-- Jquery Mobile Menu -->
+            <script src="js/jquery.slicknav.min.js"></script>
+
+            <!-- Jquery Slick , Owl-Carousel Plugins -->
+            <script src="js/owl.carousel.min.js"></script>
+            <script src="js/slick.min.js"></script>
+            <!-- One Page, Animated-HeadLin -->
+            <script src="js/wow.min.js"></script>
+            <script src="js/animated.headline.js"></script>
+            <script src="js/jquery.magnific-popup.js"></script>
+
+            <!-- Date Picker -->
+            <script src="js/gijgo.min.js"></script>
+            <!-- Nice-select, sticky -->
+            <script src="js/jquery.nice-select.min.js"></script>
+            <script src="js/jquery.sticky.js"></script>
+            <!-- Progress -->
+            <script src="js/jquery.barfiller.js"></script>
+
+            <!-- counter , waypoint,Hover Direction -->
+            <script src="js/jquery.counterup.min.js"></script>
+            <script src="js/waypoints.min.js"></script>
+            <script src="js/jquery.countdown.min.js"></script>
+            <script src="js/hover-direction-snake.min.js"></script>
+
+            <!-- contact js -->
+            <script src="js/contact.js"></script>
+            <script src="js/jquery.form.js"></script>
+            <script src="js/jquery.validate.min.js"></script>
+            <script src="js/mail-script.js"></script>
+            <script src="js/jquery.ajaxchimp.min.js"></script>
+
+            <!-- Jquery Plugins, main Jquery -->
+            <script src="js/plugins.js"></script>
+            <script src="js/main.js"></script>
+
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+
+                gtag('config', 'UA-23581568-13');
+            </script>
+
+            <script defer
+                src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
+                integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
+                data-cf-beacon='{"rayId":"8c6f69495f4084f2","version":"2024.8.0","serverTiming":{"name":{"cfExtPri":true,"cfL4":true}},"token":"cd0b4b3a733644fc843ef0b185f98241","b":1}'
+                crossorigin="anonymous"></script>
 </body>
+
+<!-- Mirrored from preview.colorlib.com/theme/courses/courses.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Sep 2024 04:05:24 GMT -->
 
 </html>
