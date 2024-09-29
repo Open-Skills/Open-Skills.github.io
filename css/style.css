@@ -3749,3 +3749,32 @@ del {
     border-radius: 5px;
     cursor: pointer;
 }
+.profile-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap as needed */
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap as needed */
+}
+
+.btn_1.btn-ghost.btn-circle.avatar {
+    display: inline-block;
+    align-items: center;
+    justify-content: right;
+    white-space: nowrap; 
+}
+
+.w-10.rounded-full img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.profile-name {
+    white-space: nowrap; /* Prevent text from wrapping */
+    justify-content: left;
+}
