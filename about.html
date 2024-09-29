@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 
 <body>
@@ -47,7 +49,7 @@
     <!-- Header Start -->
     <header>
         <!-- Header Start -->
-        <div class="header-area header-transparent">
+        <div class="header-area header-transparent flex-row">
             <div class="main-header ">
                 <div class="header-bottom  header-sticky">
                     <div class="container-fluid">
@@ -63,36 +65,47 @@
                                     <!-- Main-menu -->
                                     <div class="main-menu d-none d-lg-block">
                                         <nav>
-                                            <ul id="navigation">                                                                                          
+                                            <ul id="navigation">
                                                 <li><a href="index.html">Home</a></li>
                                                 <li><a href="courses.html">Programs</a></li>
                                                 <li><a href="opportunities.html">Opportunities</a></li>
                                                 <li><a href="communities.html">Communities</a>
                                                     <ul class="submenu">
-                                                        <li><a href="students_community.html">Students Community</a></li>
-                                                        <li><a href="educators_community.html">Educators Community</a></li>
-                                                        <li><a href="industry_community.html">Industry Community</a></li>
+                                                        <li><a href="students_community.html">Students Community</a>
+                                                        </li>
+                                                        <li><a href="educators_community.html">Educators Community</a>
+                                                        </li>
+                                                        <li><a href="industry_community.html">Industry Community</a>
+                                                        </li>
                                                     </ul>
                                                 </li>
-    
+
                                                 <li><a href="about.html">About Us</a></li>
                                                 <!-- Button -->
-                                                <li class="button-header margin-left "><a href="#" class="btn">Join</a></li>
-                                                <li class="button-header"><a href="login.html" class="btn btn3">Log in</a></li>
+                                                <li class="button-header margin-left padding-23px">
+                                                    <a href="#" class="profile-btn">
+                                                        <span class="profile-name">Sushant Kondekar</span>
+                                                        <div tabindex="0" class="btn btn-ghost btn-circle avatar">
+                                                            <div class="w-10 rounded-full">
+                                                                <img src="img/gallery/user.png" alt="Profile Image">
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </nav>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-                                    <!-- Mobile Menu -->
-                                    <div class="col-12">
-                                        <div class="mobile_menu d-block d-lg-none"></div>
-                                    </div>
+        <!-- Mobile Menu -->
+        <div class="col-12">
+            <div class="mobile_menu d-block d-lg-none"></div>
+        </div>
         <!-- Header End -->
     </header>
     <!-- Header End -->
@@ -506,9 +519,70 @@
         </div>
     </footer>
   <!-- Scroll Up -->
-  <div id="back-top" >
-    <a title="Go to Top" href=""> <i class="fas fa-level-up-alt"></i></a>
+  <div id="back-top">
+    <a title="Ai Chat" href="#" onclick="showAlert()"> 
+        <i class="fa-solid fa-exclamation"></i>
+    </a>
 </div>
+
+<script>
+    function showAlert() {
+        alert("AI feature is coming soon");
+    }
+</script>
+
+<style>
+    /* Ensure the back-to-top button stays in the bottom-right corner */
+    #back-top {
+        position: fixed;
+        bottom: 30px; /* Space from bottom */
+        right: 30px;  /* Space from right */
+        z-index: 999; /* Ensure it stays on top of other content */
+    }
+
+    /* Styling the circular button with neon effect */
+    #back-top a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70px;
+        height: 70px;
+        background-color: #0d1214; /* Black background for a neon glow */
+        color: #fff; /* White color for the icon */
+        border-radius: 50%;
+        box-shadow: 0 0 20px #00e6ff, 0 0 40px #00e6ff, 0 0 60px #00e6ff; /* Neon glow */
+        text-decoration: none;
+        transition: transform 0.3s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+        animation: neonPulse 2s infinite alternate; /* Pulsing neon effect */
+    }
+
+    /* Icon inside the button */
+    #back-top a i {
+        font-size: 24px;
+    }
+
+    /* Hover effect to increase neon glow */
+    #back-top a:hover {
+        background-color: #05666d; /* Darker shade of black on hover */
+        transform: scale(1.2); /* Grows larger on hover */
+        box-shadow: 0 0 30px #00ffea, 0 0 60px #00ffea, 0 0 90px #00ffea; /* Neon glow intensifies */
+    }
+
+    /* Pulsing neon animation */
+    @keyframes neonPulse {
+        0% {
+            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff; /* Initial pink glow */
+        }
+        50% {
+            box-shadow: 0 0 20px #00e6ff, 0 0 40px #00e6ff, 0 0 60px #00e6ff; /* Switch to blue glow */
+        }
+        100% {
+            box-shadow: 0 0 30px #00ffea, 0 0 60px #00ffea, 0 0 90px #00ffea; /* End with cyan glow */
+        }
+    }
+</style>
+
+
 
 <!-- JS here -->
 <script src="js/vendor/modernizr-3.5.0.min.js"></script>
