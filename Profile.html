@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard UI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .bg-custom-purple {
+      background-color: rgba(73, 19, 82, 1);
+      border-radius: 8px; /* Add border radius for the aside */
+    }
+
+    .bg-gradient-purple-pink {
+      background: linear-gradient(to bottom, #a18cd1, #fbc2eb); /* Gradient from purple to pink */
+      border-radius: 0; /* No border radius for the main container */
+    }
+
+    /* 3D Card Effect */
+    .card {
+      transition: transform 0.2s;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Profile Image Style */
+    .profile-image {
+      width: 40px; /* Set desired width */
+      height: 40px; /* Set desired height */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main Wrapper with Purple to Pink Gradient Background -->
+  <div class="container mx-auto bg-gradient-purple-pink p-8">
+    <!-- Sidebar and Main Content -->
+    <div class="flex">
+      <!-- Sidebar with Custom Purple Background -->
+      <aside class="w-64 h-screen bg-custom-purple text-white p-5 shadow-lg mr-4">
+        <div class="mb-8">
+          <!-- Replace Circle with Logo -->
+          <div class="col-xl-2 col-lg-2">
+            <div class="logo">
+              <a href="index.html"><img src="img/logo/logo.png" alt="Logo" class="w-full h-auto"></a>
+            </div>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li class="mb-6">
+              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
+                <span>My profile</span>
+              </a>
+            </li>
+            <li class="mb-6">
+              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
+                <span>Cources</span>
+              </a>
+            </li>
+            <li class="mb-6">
+              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
+                <span>Projects</span>
+              </a>
+            </li>
+            <li class="mb-6">
+              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
+                <span>Assignments</span>
+              </a>
+            </li>
+            <li class="mb-6">
+              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
+                <span>Results & Documents</span>
+              </a>
+            </li>
+            <li class="mb-6">
+              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
+                <span>Community</span>
+              </a>
+            </li>
+            <li class="mb-6">
+              <a href="#" class="flex items-center space-x-2 hover:bg-gray-700 p-3 rounded-lg">
+                <span>Notes & Books</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <div class="flex-1 p-8">
+        <header class="flex justify-between items-center mb-6">
+          <div>
+            <h2 class="text-xl font-bold">Dashboard</h2>
+          </div>
+          <div class="flex items-center space-x-4">
+            <div class="flex items-center space-x-2">
+              <span>Profile</span>
+              <img src="https://tse3.mm.bing.net/th?id=OIP.h_6BkC8gtDIwXLwW33zWTQHaHa&pid=Api&P=0&h=180" alt="Profile" class="rounded-full profile-image">
+            </div>
+          </div>
+        </header>
+
+        <!-- Stats Section -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg card">
+            <h3 class="text-lg font-semibold mb-4">Visits for Today</h3>
+            <p class="text-5xl font-bold text-gray-800">824</p>
+            <div class="mt-4">
+              <p class="text-gray-500">View Full Statistics</p>
+            </div>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg card">
+            <h3 class="text-lg font-semibold mb-4">Popularity Score</h3>
+            <p class="text-5xl font-bold text-gray-800">87%</p>
+            <div class="mt-4">
+              <p class="text-gray-500">Keep growing your audience!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Additional Data Section -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <div class="bg-white p-6 rounded-lg shadow-lg card">
+            <h3 class="text-lg font-semibold mb-4">Finance Performance</h3>
+            <p class="text-3xl font-bold text-gray-800">12,641</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg card">
+            <h3 class="text-lg font-semibold mb-4">Top Partners</h3>
+            <ul>
+              <li class="flex justify-between">
+                <span>Becky Cooper</span>
+                <span>45%</span>
+              </li>
+              <li class="flex justify-between mt-2">
+                <span>Albert Flores</span>
+                <span>30%</span>
+              </li>
+              <li class="flex justify-between mt-2">
+                <span>Guy Hawkins</span>
+                <span>25%</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-lg card">
+            <h3 class="text-lg font-semibold mb-4">Targeting by Region</h3>
+            <div class="text-center">
+              <p>Poland - 45%</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
